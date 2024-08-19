@@ -68,6 +68,8 @@ public class WanServer {
 //			}
 
             String servip = App.getString("wan_ip");
+            print.w("ip", "wan ip is: " + servip);
+
             if (!validIP(servip))
                 return;
 
