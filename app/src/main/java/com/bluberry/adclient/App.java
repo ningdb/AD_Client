@@ -24,7 +24,7 @@ import java.util.concurrent.Executor;
 
 public class App extends Application {
     //============== config ==============
-    //public final static boolean WAN = true;
+    public final static boolean WAN = true;
     public final static boolean HDMI = false;
     public final static boolean SERIAL_PORT = false;
     //所有ad zip 解压到本目录下, 按数字递增取文件夹名
@@ -32,7 +32,7 @@ public class App extends Application {
     //////////////////////////////////////////////////
     private final static String TAG = "App";
     public static volatile boolean Alive = false;
-    public static Executor IpRecvrr;
+    public static Executor IpRecv;
     public static String zipFile = Environment.getExternalStorageDirectory().getAbsolutePath() + "/ad_bluberry_z.zip";
     public static String apkFile = Environment.getExternalStorageDirectory().getAbsolutePath() + "/ad_bluberry_z.apk";
 

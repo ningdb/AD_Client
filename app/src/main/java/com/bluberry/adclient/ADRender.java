@@ -28,6 +28,7 @@ import com.bluberry.common.IOUtil;
 import com.bluberry.common.print;
 import com.bluberry.network.CommandClient;
 import com.bluberry.network.IpReceiver;
+import com.bluberry.network.WanServer;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonParseException;
@@ -305,12 +306,12 @@ public class ADRender {
     }
 
     public void init() {
-        //App.IpRecv.execute(IpReceiver.getInstance());
-        //if (App.WAN)
+        if (App.WAN)
         {
-            //WanServer.getInstance().connectWanServerCmd();
+            App.saveString("wan_ip","192.168.16.80");
+            WanServer.getInstance().connectWanServerCmd();
         }
-        //else
+        else
         {
             Thread ipReceiverThread = new Thread(IpReceiver.getInstance());
             ipReceiverThread.start();

@@ -79,7 +79,7 @@ public class CommandClient implements Runnable {
         try {
             //here you must put your computer's IP address.
             InetAddress serverAddr = InetAddress.getByName(serverIP);
-            System.out.println("CC: Connecting...");
+            print.i("CC","CC: Connecting...");
 
             //create a socket to make the connection with the server
             socket = new Socket(serverAddr, Cmd.cmd_port);
@@ -111,25 +111,25 @@ public class CommandClient implements Runnable {
                         }
                         serverMessage = null;
                     } else {
-                        System.out.println("CC: null Message, ERROR ");
+                        print.i("CC","CC: null Message, ERROR ");
                         break;
                     }
 
                 }
 
             } catch (Exception e) {
-                System.out.println("CC: Error " + e);
+                print.i("CC","CC: Error " + e);
 
             } finally {
                 //the socket must be closed. It is not possible to reconnect to this socket
                 // after it is closed, which means a new socket instance has to be created.
                 stopClient();
-                System.out.println("CC: Done.");
+                print.i("CC","CC: Done.");
 
                 //App.IpRecv.execute(IpReceiver.getInstance());
             }
         } catch (Exception e) {
-            System.out.println("CC: Error2 " + e);
+            print.i("CC","CC: Error2 " + e);
             //e.printStackTrace();
         }
     }
@@ -146,8 +146,8 @@ public class CommandClient implements Runnable {
             String cmd = strArr[0].substring(1).trim();
             String param = strArr[1].trim();
 
-            System.out.println("cmd:" + cmd);
-            System.out.println("param:" + param);
+            print.i("CC","cmd:" + cmd);
+            print.i("CC","param:" + param);
 
             switch (Command.valueOf(cmd)) {
                 case send_ad:
