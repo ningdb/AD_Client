@@ -306,12 +306,14 @@ public class ADRender {
     }
 
     public void init() {
-        if (App.WAN)
-        {
-            App.saveString("wan_ip","192.168.16.80");
-            WanServer.getInstance().connectWanServerCmd();
-        }
-        else
+        App.saveString("wan_ip","192.168.16.80");
+        WanServer.getInstance().connectWanServerCmd();
+//        if (App.WAN)
+//        {
+//            App.saveString("wan_ip","192.168.16.80");
+//            WanServer.getInstance().connectWanServerCmd();
+//        }
+//        else
         {
             Thread ipReceiverThread = new Thread(IpReceiver.getInstance());
             ipReceiverThread.start();
