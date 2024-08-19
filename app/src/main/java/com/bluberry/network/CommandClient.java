@@ -26,7 +26,7 @@ import cs.comm.Cmd;
 import cs.comm.Command;
 
 public class CommandClient implements Runnable {
-    public String serverIP = " "; //your computer IP address
+    public String serverIP = "192.168.16.80"; //your computer IP address
     private String tag = "CommandClient";
     private String serverMessage;
     private OnMessageReceived mMessageListener = null;
